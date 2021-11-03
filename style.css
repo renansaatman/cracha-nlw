@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    padding: 0;
 }
 html, body {
     --grey: hsl(240, 9%, 89%);
@@ -15,9 +16,14 @@ body {
 }
 
 main {
-    background: url(images/background.svg);
-    width: 375px;
-    height: 812px;
+    background: url(images/background.svg) no-repeat center/cover;
+    width: 100vw;
+    height: 100vh;
+    min-height: 812px;
+}
+  
+.lanyard {
+    display: none;
 }
 
 .container {
@@ -81,3 +87,94 @@ ul {
 
     gap: 0.5rem;
 }
+
+@media (min-width: 720px) {
+    body {
+        background: url(images/Desktop.svg) no-repeat center/cover;
+        background-color: #121214;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    main {
+        height: 56vh;
+        min-height: 540px;
+        width: 358px;
+
+        margin-top: -18px;
+    }
+
+    .avatar {
+        margin-top: 4.1rem;
+    }
+
+    
+    .lanyard {
+        display: flex;
+        justify-content: center;
+        z-index: 2;
+    }
+    
+    .gap {
+        height: 8px;
+        width: 80px;
+        border: solid 1px black;
+        background-color: black;
+        
+        position: absolute;
+        top: 154px;
+        z-index: -1;
+    }
+}
+
+/*@media (min-width: 720px) {
+    .container {
+      background: url(images/background-desktop.svg) no-repeat/cover;
+      padding: 40px 70px;
+      background-color: #202024;
+      position: relative;
+      top: -30px;
+    }
+  
+    main {
+      background: none;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      background-color: black;
+    }
+  
+    .avatar {
+      margin: 2rem auto 0;
+    }
+  
+    .faixa {
+      display: flex;
+      z-index: 2;
+    }
+  
+    .quebra {
+      height: 13px;
+      width: 82px;
+      background-color: black;
+      z-index: 1;
+      position: relative;
+      top: -6px;
+    }
+  
+    .gradiente {
+      display: block;
+      position: absolute;
+      left: 30px;
+    }
+  
+    .gradiente2 {
+      display: block;
+      position: absolute;
+      right: 40px;
+    }
+  }*/
